@@ -1,32 +1,46 @@
-<header>
-    <a href="/" class="logo">Ecommerce</a>
+<header class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a href="/" class="navbar-brand">Ecommerce</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <nav>
-        <ul>
-            <li><a href="/cart" class="btnUpload">Carritos</a></li>
-            <li><a href="/products" class="btnUpload">Productos</a></li>
-            
-            {{#if isAdmin}}
-                <li><a href="/realtimeproducts" class="btnUpload">Administrar productos</a></li>
-            {{/if}}
-            
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuario</a>
-                <ul class="dropdown-menu">
-                    <li><a href="/profile" class="text-dark">Perfil</a></li>
-                    {{#if loggedIn}}
-                        <li><a href="/api/sessions/logout" class="text-dark">Cerrar sesión</a></li>
-                    {{else}}
-                        <li><a href="/login" class="text-dark">Iniciar sesión</a></li>
-                        <li><a href="/register" class="text-dark">Registrarse</a></li>
-                    {{/if}}
-                </ul>
-            </li>
-        </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="/cart" class="nav-link">Carritos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/products" class="nav-link">Productos</a>
+                </li>
+
+                {{#if isAdmin}}
+                <li class="nav-item">
+                    <a href="/realtimeproducts" class="nav-link">Administrar productos</a>
+                </li>
+                {{/if}}
+
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Usuario
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a href="/profile" class="dropdown-item">Perfil</a>
+                        {{#if loggedIn}}
+                        <a href="/api/sessions/logout" class="dropdown-item">Cerrar sesión</a>
+                        {{else}}
+                        <a href="/login" class="dropdown-item">Iniciar sesión</a>
+                        <a href="/register" class="dropdown-item">Registrarse</a>
+                        {{/if}}
+                    </div>
+                </li>
+            </ul>
+        </div>
     </nav>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </header>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
